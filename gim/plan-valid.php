@@ -4,32 +4,46 @@ include_once("./functions.php");
 
 $user_data = check_login($conn);
 
+
+
 //session_start();
 $sql2 = mysqli_query($conn,"SELECT plan FROM users 
     WHERE user_id = '" . $user_data["user_id"] . "'");
 
-$expired_plan = array("Your plan has expired");
 $row = $sql2->fetch_assoc();
-if($row < date("Y/m/d")){
-    print_r($row);
-    echo "its ok";
+
+$expired_plan = array("plan" => "Your plan has been expired");
+$ok_plan = array("plan" => "is valid till ");
+$expire_date = array("date" => $row['plan']);
+
+
+if($row['plan'] > date("Y-m-d")){
+/*
+    print_r($row['plan']);
+    echo " ok ";*/
+
+    $plan_validation = array_replace($row, $ok_plan, $expire_date);
 } else{
+/*
+    print_r($row['plan']);
+    echo " not ok ";*/
+
     $plan_validation = array_replace($row, $expired_plan);
-    print_r($plan_validation);
 }
-//$plan_validation = array_replace($row, $expired_plan);
- echo date("Y/m/d");
+
+ //echo date("Y-m-d");
 /* while ($row = $sql2->fetch_assoc()) {
         //echo $row['plan']."<br>";
     }
-  
-if (mysqli_query($conn, $sql2)) {
-    //echo "Record added successfully";
-} else {
-    //echo "Error adding record: " . mysqli_error($conn);
-}
+
 mysqli_close($conn);
-
+$cur_date = $sql1->fetch_assoc();
+$sql1 = mysqli_query($conn,"SELECT CURDATE()");
 */
+   // 
 
-
+//
+    //print_r($plan_validation);
+    
+    
+    //$plan_validation = array_replace($row, $expired_plan);

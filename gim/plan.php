@@ -8,19 +8,20 @@
     include_once("./plan-valid.php");
     $user_data = check_login($conn);
 //php echo $user_data["plan"];
-
+//$val = $plan_validation[['plan']['date']];
 ?>
 
 
 <body>
-    <h3>Current plan valid 
-        <?php //$row = $sql2->fetch_assoc();
-           // if(){}
-            //print_r($plan_validation);
-         ?>
+    <h3>Current plan 
+        <?php foreach($plan_validation as $key => $value)
+            {
+            echo $value;
+            }
+        ?>
     </h3>
     <h3>
-        PLease, <?php echo $user_data['user_name']; ?>, hoose Your plan :)
+        PLease, <?php echo $user_data['user_name']; ?>, choose Your plan :)
     </h3>
 <form action="plan-process.php?user_id=<?php echo $user_data["user_id"]; ?>" method="post">
 

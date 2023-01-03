@@ -14,7 +14,8 @@ session_start();
         $password = $_POST['password'];
         $email = $_POST['email'];
         $date = $_POST['subscription'];
-        
+        $plan = $_POST['plan'];
+
         if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
             
             //read from db
