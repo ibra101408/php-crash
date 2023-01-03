@@ -13,7 +13,7 @@
 
 
 <body>
-    <h3>Current plan 
+    <h3> 
         <?php foreach($plan_validation as $key => $value)
             {
             echo $value;
@@ -21,7 +21,7 @@
         ?>
     </h3>
     <h3>
-        PLease, <?php echo $user_data['user_name']; ?>, choose Your plan :)
+        Please, <?php echo $user_data['user_name']; ?>, choose Your plan :)
     </h3>
 <form action="plan-process.php?user_id=<?php echo $user_data["user_id"]; ?>" method="post">
 

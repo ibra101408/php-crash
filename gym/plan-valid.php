@@ -13,9 +13,9 @@ $sql2 = mysqli_query($conn,"SELECT plan FROM users
 $row = $sql2->fetch_assoc();
 
 $expired_plan = array("plan" => "Your plan has been expired");
-$ok_plan = array("plan" => "is valid till ");
+$ok_plan = array("plan" => "Current plan is valid till ");
 $expire_date = array("date" => $row['plan']);
-
+$null_plan = array("plan" => "New here? Try our best plans");
 
 if($row['plan'] > date("Y-m-d")){
 /*
@@ -23,6 +23,9 @@ if($row['plan'] > date("Y-m-d")){
     echo " ok ";*/
 
     $plan_validation = array_replace($row, $ok_plan, $expire_date);
+}else if ($row['plan'] == NULL){
+
+    $plan_validation = array_replace($row, $null_plan);
 } else{
 /*
     print_r($row['plan']);
