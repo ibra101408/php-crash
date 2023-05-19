@@ -1,6 +1,6 @@
 
-<?php require '../feedback/inc/header.php'; 
+<?php require '../gym/inc/header.php'; 
 
 //comeing 
 
-include '../feedback/inc/footer.php'; ?>
+include '../gym/inc/footer.php'; ?>

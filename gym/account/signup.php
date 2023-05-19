@@ -1,5 +1,5 @@
 
-<?php require '../../feedback/inc/header.php'; ?>
+<?php require '../../gym/inc/header.php'; ?>
 
 
 <?php
@@ -72,4 +72,4 @@ session_start();
 
 
 
-<?php include '../../feedback/inc/footer.php'; ?>
+<?php include '../../gym/inc/footer.php'; ?>

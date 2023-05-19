@@ -1,5 +1,5 @@
 
-<?php require '../../feedback/inc/header.php'; ?>
+<?php require '../../gym/inc/header.php'; ?>
 
 
 <?php
@@ -13,8 +13,8 @@ session_start();
         $user_name = $_POST['user_name'];
         $password = $_POST['password'];
         $email = $_POST['email'];
-        $date = $_POST['subscription'];
-        $plan = $_POST['plan'];
+      // $date = $_POST['subscription'];
+      // $plan = $_POST['plan'];
 
         if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
             
@@ -41,16 +41,9 @@ session_start();
     }
 
 ?>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-</head>
+
 <body>
+    <h2 class="title login">Login</h2>
         <form method="post">
             <div class="form-group">
                 <label>name</label>
@@ -73,9 +66,9 @@ session_start();
             </div>
         </form>
 </body>
-</html>
 
 
 
 
-<?php include '../../feedback/inc/footer.php'; ?>
+
+<?php include '../../gym/inc/footer.php'; ?>

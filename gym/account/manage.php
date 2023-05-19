@@ -1,5 +1,5 @@
 <?php 
-    require '../../feedback/inc/header.php';
+    require '../../gym/inc/header.php';
 
     session_start();
 
@@ -15,4 +15,4 @@
     <h3> starts: <?php echo $user_data['subscription']; ?></h3>
     
 <?php
- include '../../feedback/inc/footer.php'; ?>
+ include '../../gym/inc/footer.php'; ?>
